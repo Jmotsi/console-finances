@@ -94,3 +94,10 @@ for(var i=0;i<finances.length;i++){
 }
 console.log(sum);
 
+var count = 0;
+finances.forEach(function(e) {
+  if (typeof e[0] === 'string') count++;
+});
+console.log(count);
+
+av
