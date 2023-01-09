@@ -89,7 +89,7 @@ var finances = [
 
     var sum = 0;
 for(var i=0;i<finances.length;i++){
-    console.log(finances[i]);
+    console.table(finances[i]);
     sum += finances[i][1];
 }
 console.log(sum);
@@ -100,4 +100,19 @@ finances.forEach(function(e) {
 });
 console.log(count);
 
-av
+var newA = [];
+for (var i = 1; i < finances.length; i++){
+  newA.push(finances[i] - finances[i - 1])
+console.log(newA);
+}
+
+
+change = 0;
+
+
+
+let average = sum/count;
+console.log(average);
+
+
+console.log(Math.min(finances));
