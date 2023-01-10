@@ -123,3 +123,34 @@ var average = Math.round(totalChange / (finances.length - 1));
 console.log(average)
 
 ///console.log(Math.min(finances));
+
+// Variables to store maximum and minimum values
+var maxProfit = 0;
+var minLoss = 0;
+
+// Variables to store dates
+var maxProfitDate = '';
+var minLossDate = '';
+
+for (var i = 0; i < finances.length; i++) {
+
+  // Check if the value is number
+  if(typeof finances[i][1] !== 'string'){
+    // Calculate profit/loss
+    var profitLoss = finances[i][1];
+
+    // Store the maximum and minimum values
+    if (profitLoss > maxProfit) {
+      maxProfit = profitLoss;
+      maxProfitDate = finances[i][0];
+    }
+    if (profitLoss < minLoss) {
+      minLoss = profitLoss;
+      minLossDate = finances[i][0];
+    }
+  }
+}
+
+// Log the results
+console.log('Greatest Increase in Profits: ' + maxProfitDate + ' ($' + maxProfit + ')');
+console.log('Greatest Decrease in Losses: ' + minLossDate + ' ($' + minLoss + ')');
