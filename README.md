@@ -20,6 +20,8 @@ Screenshot of the website and console
 
 ![Screenshot](https://github.com/Jmotsi/console-finances/blob/main/consolefinances.JPG)
 
+link - https://jmotsi.github.io/console-finances/
+
 
 ## Contributing
 
