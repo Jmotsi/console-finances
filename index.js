@@ -87,42 +87,35 @@ var finances = [
     ['Feb-2017', 671099]
     ];
 
+    // to calculate the net total amount of profit/losses over the entire period.
+    
     var sum = 0;
-for(var i=0;i<finances.length;i++){
-    console.table(finances[i]);
-    sum += finances[i][1];
-}
-console.log(sum);
+    for(var i=0;i<finances.length;i++){
+      sum += finances[i][1];
+    }
 
+// to calculate the total number of months included in the dataset.
 var count = 0;
 finances.forEach(function(e) {
   if (typeof e[0] === 'string') count++;
 });
-console.log(count);
 
-///var newA = [];
-//for (var i = 1; i < finances.length; i++){
-//newA.push((finances[i][1] - finances[i - 1][1]));
-//console.log(newA);
-//}
-
+///calculate the average of changes in the entire period.
 
 var totalChange = 0;
 for (var i = 1; i < finances.length; i++) {
-  ///for (var j = 0; j < finances[i].length; j++)
-
   if(typeof finances[i][1] !== 'string'){
     totalChange += finances[i][1] - finances[i - 1][1];
-   /// (diff += finances[i][j] - finances[i-j][j]);
-    ///console.log(diff);
   }
 };
 
+// Calculating the total average of changes.
 
 var average = Math.round(totalChange / (finances.length - 1));
-console.log(average)
 
-///console.log(Math.min(finances));
+
+
+///the greatest increase and decrease in profits over the entire period.
 
 // Variables to store maximum and minimum values
 var maxProfit = 0;
@@ -151,6 +144,11 @@ for (var i = 0; i < finances.length; i++) {
   }
 }
 
-// Log the results
+// Log the results to the console.
+console.log('Financial Analysis')
+console.log('----------------------------')
+console.log('Total Months: ' + count)
+console.log('Total: $' + sum)
+console.log('Average Change: $' + average)
 console.log('Greatest Increase in Profits: ' + maxProfitDate + ' ($' + maxProfit + ')');
 console.log('Greatest Decrease in Losses: ' + minLossDate + ' ($' + minLoss + ')');
