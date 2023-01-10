@@ -106,6 +106,16 @@ for (var i = 1; i < finances.length; i++){
 console.log(newA);
 }
 
+var diff = 0;
+for (var i = 0; i < finances.length; i++) {
+  for (var j = 0; j < finances[i].length; j++)
+
+  if(typeof finances[i][j] !== 'string'){
+    (finances[i][j] - finances[i-1][j]);
+    console.log(diff);
+  }
+};
+
 
 change = 0;
 
