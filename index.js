@@ -100,29 +100,26 @@ finances.forEach(function(e) {
 });
 console.log(count);
 
-var newA = [];
-for (var i = 1; i < finances.length; i++){
-  newA.push(finances[i] - finances[i - 1])
-console.log(newA);
-}
+///var newA = [];
+//for (var i = 1; i < finances.length; i++){
+//newA.push((finances[i][1] - finances[i - 1][1]));
+//console.log(newA);
+//}
 
-var diff = 0;
-for (var i = 0; i < finances.length; i++) {
-  for (var j = 0; j < finances[i].length; j++)
 
-  if(typeof finances[i][j] !== 'string'){
-    (finances[i][j] - finances[i-1][j]);
-    console.log(diff);
+var totalChange = 0;
+for (var i = 1; i < finances.length; i++) {
+  ///for (var j = 0; j < finances[i].length; j++)
+
+  if(typeof finances[i][1] !== 'string'){
+    totalChange += finances[i][1] - finances[i - 1][1];
+   /// (diff += finances[i][j] - finances[i-j][j]);
+    ///console.log(diff);
   }
 };
 
 
-change = 0;
+var average = Math.round(totalChange / (finances.length - 1));
+console.log(average)
 
-
-
-let average = sum/count;
-console.log(average);
-
-
-console.log(Math.min(finances));
+///console.log(Math.min(finances));
